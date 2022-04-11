@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    volumes:
+      - ./:/usr/src/app
+
+    command: sh -c "cd poit-app && npm run dev"
+
+    ports:
+      - "3000:3000"
